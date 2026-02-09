@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile - E-CARE</title>
+    <link rel="stylesheet" href="../CSS/patient.css">
+</head>
+<body>
+    <div class="doctor-container">
+        <h2>My Profile</h2>
+        <p>View and update your professional information and credentials.</p>
+        <div class="theme-toggle">
+            <button id="lightThemeBtn">Light Theme</button>
+            <button id="darkThemeBtn">Dark Theme</button>
+        </div>
+        <section class="profile-info">
+            <h3>Professional Information</h3>
+            <form id="profileForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" value="Dr. Jane Doe" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="jane.doe@email.com" required>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" value="+254700000001">
+                <label for="specialty">Specialty:</label>
+                <select id="specialty" name="specialty">
+                    <option value="">Select</option>
+                    <option value="diabetes" selected>Diabetes</option>
+                    <option value="cancer">Cancer</option>
+                    <option value="hypertension">Hypertension</option>
+                    <option value="hepatitis">Hepatitis</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="license">Medical License Number:</label>
+                <input type="text" id="license" name="license" value="MD123456">
+                <button type="submit">Update Profile</button>
+            </form>
+        </section>
+        <section class="profile-summary">
+            <h3>Profile Summary</h3>
+            <ul id="profileSummary">
+                <li>Name: Dr. Jane Doe</li>
+                <li>Email: jane.doe@email.com</li>
+                <li>Phone: +254700000001</li>
+                <li>Specialty: Diabetes</li>
+                <li>License: MD123456</li>
+            </ul>
+        </section>
+        <section class="actions">
+            <h3>Actions</h3>
+            <button id="downloadProfileBtn">Download Profile</button>
+            <button id="printProfileBtn">Print Profile</button>
+            <button id="shareProfileBtn">Share Profile</button>
+            <form id="uploadProfileDocsForm" style="display:inline-block; margin-left:16px;">
+                <label for="uploadProfileDocs" style="display:none;">Upload Profile Docs:</label>
+                <input type="file" id="uploadProfileDocs" name="uploadProfileDocs" multiple>
+                <button type="submit">Upload Docs</button>
+            </form>
+        </section>
+        <section class="tips">
+            <h3>Profile Tips</h3>
+            <ul>
+                <li>Keep your professional information up-to-date.</li>
+                <li>Upload relevant credentials and certifications.</li>
+                <li>Download or print your profile for your records.</li>
+            </ul>
+        </section>
+        <nav class="navigation" style="margin-top:32px;">
+            <ul>
+                <li><a href="doctor-dashboard.html">Dashboard</a></li>
+                <li><a href="consultation.html">Consultations</a></li>
+                <li><a href="patient-list.html">Patients</a></li>
+                <li><a href="records.html">Medical Records</a></li>
+                <li><a href="prescriptions.html">Prescriptions</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="../FRONTEND/index.html">Home</a></li>
+                <li><a href="../FRONTEND/login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer style="margin-top:40px; text-align:center; color:#6a7b8c;">
+        <p>&copy; 2026 E-CARE / My Healthcare Companion. All rights reserved.</p>
+    </footer>
+    <script src="../JS/doctor.js"></script>
+    <script>
+    // Download profile (demo: download summary as text)
+    document.getElementById('downloadProfileBtn').addEventListener('click', function() {
+        const summary = document.getElementById('profileSummary').innerText;
+        const blob = new Blob([summary], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'doctor_profile.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    });
+    // Print profile
+    document.getElementById('printProfileBtn').addEventListener('click', function() {
+        window.print();
+    });
+    // Share profile (Web Share API)
+    document.getElementById('shareProfileBtn').addEventListener('click', function() {
+        if (navigator.share) {
+            navigator.share({
+                title: document.title,
+                text: 'Check out my doctor profile!',
+                url: window.location.href
+            });
+        } else {
+            alert('Sharing not supported on this browser.');
+        }
+    });
+    // Upload profile docs (demo only)
+    document.getElementById('uploadProfileDocsForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const files = document.getElementById('uploadProfileDocs').files;
+        if (files.length > 0) {
+            alert('Documents uploaded! (Demo only)');
+        } else {
+            alert('Please select files to upload.');
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Records - E-CARE</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <div class="patient-container">
+        <h2>My Health Records</h2>
+        <p>View and upload your medical records securely.</p>
+        <div class="theme-toggle">
+            <button id="lightThemeBtn">Light Theme</button>
+            <button id="darkThemeBtn">Dark Theme</button>
+        </div>
+        <section class="records-list">
+            <h3>Uploaded Records</h3>
+            <ul id="uploadedRecords">
+                <li>Blood Test - 01 Feb 2026 - <a href="#">View</a></li>
+                <li>Prescription - 05 Feb 2026 - <a href="#">View</a></li>
+            </ul>
+        </section>
+        <section class="upload-record">
+            <h3>Upload New Record</h3>
+            <form id="uploadRecordForm">
+                <label for="recordType">Record Type:</label>
+                <select id="recordType" name="recordType" required>
+                    <option value="">Choose...</option>
+                    <option value="blood">Blood Test</option>
+                    <option value="prescription">Prescription</option>
+                    <option value="scan">Scan/Imaging</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="recordFile">File:</label>
+                <input type="file" id="recordFile" name="recordFile" required>
+                <button type="submit">Upload Record</button>
+            </form>
+        </section>
+        <section class="tips">
+            <h3>Record Management Tips</h3>
+            <ul>
+                <li>Keep your records organized and up-to-date.</li>
+                <li>Upload clear and accurate files for best results.</li>
+                <li>Review your records regularly with your doctor.</li>
+            </ul>
+        </section>
+        <nav class="navigation" style="margin-top:32px;">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="consult-doctor.html">Consult Doctor</a></li>
+                <li><a href="medication.html">Medication</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="../FRONTEND/index.html">Home</a></li>
+                <li><a href="../FRONTEND/login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer style="margin-top:40px; text-align:center; color:#6a7b8c;">
+        <p>&copy; 2026 E-CARE / My Healthcare Companion. All rights reserved.</p>
+    </footer>
+    <script src="../JS/patient.js"></script>
+    <script>
+    document.getElementById('uploadRecordForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Record uploaded! (Demo only)');
+    });
+    // Theme toggle
+    document.getElementById('lightThemeBtn').addEventListener('click', function() {
+        document.body.classList.remove('dark');
+    });
+    document.getElementById('darkThemeBtn').addEventListener('click', function() {
+        document.body.classList.add('dark');
+    });
+    </script>
+</body>
+</html>

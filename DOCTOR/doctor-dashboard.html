@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - E-CARE</title>
+    <link rel="stylesheet" href="../CSS/patient.css">
+</head>
+<body>
+    <div class="doctor-container">
+        <h2>Welcome, Doctor!</h2>
+        <p>Your dashboard for managing patients, consultations, and medical records.</p>
+        <div class="theme-toggle">
+            <button id="lightThemeBtn">Light Theme</button>
+            <button id="darkThemeBtn">Dark Theme</button>
+        </div>
+        <section class="quick-links">
+            <h3>Quick Access</h3>
+            <ul>
+                <li><a href="consultation.html">Consultations</a></li>
+                <li><a href="patient-list.html">Patients</a></li>
+                <li><a href="records.html">Medical Records</a></li>
+                <li><a href="prescriptions.html">Prescriptions</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="doctor-profile.html">Profile</a></li>
+            </ul>
+        </section>
+        <section class="summary">
+            <h3>Summary</h3>
+            <ul>
+                <li>Upcoming Consultation: 10 Feb 2026, 10:00 AM with John Doe</li>
+                <li>New Messages: 2</li>
+                <li>Pending Records Review: 3</li>
+            </ul>
+        </section>
+        <section class="actions">
+            <h3>Actions</h3>
+            <button id="downloadReportBtn">Download Report</button>
+            <button id="printBtn">Print Page</button>
+            <button id="shareBtn">Share Page</button>
+            <form id="uploadDocsForm" style="display:inline-block; margin-left:16px;">
+                <label for="uploadDocs" style="display:none;">Upload Documents:</label>
+                <input type="file" id="uploadDocs" name="uploadDocs" multiple>
+                <button type="submit">Upload Docs</button>
+            </form>
+        </section>
+        <section class="tips">
+            <h3>Dashboard Tips</h3>
+            <ul>
+                <li>Review your schedule and messages daily.</li>
+                <li>Keep patient records up-to-date.</li>
+                <li>Download or print reports for your records.</li>
+            </ul>
+        </section>
+        <nav class="navigation" style="margin-top:32px;">
+            <ul>
+                <li><a href="../FRONTEND/index.html">Home</a></li>
+                <li><a href="../FRONTEND/login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer style="margin-top:40px; text-align:center; color:#6a7b8c;">
+        <p>&copy; 2026 E-CARE / My Healthcare Companion. All rights reserved.</p>
+    </footer>
+    <script src="../JS/doctor.js"></script>
+    <script>
+    // Download report (demo: download summary as text)
+    document.getElementById('downloadReportBtn').addEventListener('click', function() {
+        const summary = document.querySelector('.summary ul').innerText;
+        const blob = new Blob([summary], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'doctor_report.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    });
+    // Print page
+    document.getElementById('printBtn').addEventListener('click', function() {
+        window.print();
+    });
+    // Share page (Web Share API)
+    document.getElementById('shareBtn').addEventListener('click', function() {
+        if (navigator.share) {
+            navigator.share({
+                title: document.title,
+                text: 'Check out my doctor dashboard!',
+                url: window.location.href
+            });
+        } else {
+            alert('Sharing not supported on this browser.');
+        }
+    });
+    // Upload docs (demo only)
+    document.getElementById('uploadDocsForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const files = document.getElementById('uploadDocs').files;
+        if (files.length > 0) {
+            alert('Documents uploaded! (Demo only)');
+        } else {
+            alert('Please select files to upload.');
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login to E-CARE</h2>
+        <p>Welcome to My Healthcare Companion. Please log in to access your account and manage your health information.</p>
+        <form id="loginForm">
+            <label for="username">Username or Email:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="role">Login as:</label>
+            <select id="role" name="role" required>
+                <option value="">Select Role</option>
+                <option value="patient">Patient</option>
+                <option value="doctor">Doctor</option>
+            </select>
+
+            <button type="submit">Login</button>
+        </form>
+        <div class="features">
+            <h3>Features for Patients</h3>
+            <ul>
+                <li>Secure login and profile management</li>
+                <li>Consult qualified doctors online</li>
+                <li>Book appointments easily</li>
+                <li>Access and upload health records</li>
+                <li>Receive notifications for appointments and medication</li>
+                <li>Privacy and data protection</li>
+            </ul>
+            <h3>Features for Doctors</h3>
+            <ul>
+                <li>Manage multiple patients</li>
+                <li>View patient information and medication history</li>
+                <li>Respond to patient messages</li>
+                <li>Update consultation notes and prescriptions</li>
+            </ul>
+        </div>
+        <div class="about-system">
+            <h3>About E-CARE</h3>
+            <p>E-CARE is an integrated digital healthcare platform designed to support patients with chronic illnesses such as cancer, diabetes, hypertension, and hepatitis. The system enables remote consultation, appointment scheduling, and secure medical record management, improving access and quality of care.</p>
+            <p>Our platform connects patients with verified doctors, reduces hospital waiting times, and provides a centralized solution for managing health information. E-CARE is accessible, sustainable, and complements in-person hospital services.</p>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: sngethe@strathmore.edu</p>
+        </div>
+        <div class="navigation">
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+            <p><a href="index.html">Back to Home</a></p>
+        </div>
+    </div>
+    <footer style="margin-top:40px; text-align:center; color:#6a7b8c;">
+        <p>&copy; 2026 E-CARE / My Healthcare Companion. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+<script>
+// Redirect based on role after login (demo only)
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const role = document.getElementById('role').value;
+    if (role === 'patient') {
+        window.location.href = 'patient.html'; // Replace with actual patient dashboard
+    } else if (role === 'doctor') {
+        window.location.href = 'doctor.html'; // Replace with actual doctor dashboard
+    } else {
+        alert('Please select a role.');
+    }
+});
+</script>
+</body>
+</html>

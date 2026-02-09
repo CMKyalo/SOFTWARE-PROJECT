@@ -1,0 +1,158 @@
+/* style.css for E-CARE / My Healthcare Companion */
+
+body {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container, .login-container, .register-container, .patient-container, .doctor-container, .admin-container {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    padding: 32px 40px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    margin: 24px auto;
+}
+
+h1, h2, h3 {
+    color: #2d3a4a;
+    margin-bottom: 24px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 12px;
+}
+
+nav ul li a {
+    color: #4f8cff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: #2d3a4a;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+label {
+    text-align: left;
+    color: #2d3a4a;
+    font-size: 1em;
+    margin-bottom: 4px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #b6c6e2;
+    font-size: 1em;
+    background: #f7fafd;
+    margin-bottom: 8px;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus, select:focus {
+    border-color: #4f8cff;
+    outline: none;
+}
+
+button {
+    background: linear-gradient(90deg, #4f8cff 0%, #6ed6ff 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #2d3a4a 0%, #4f8cff 100%);
+}
+
+.features, .about-system, .contact-info, .navigation {
+    margin-top: 24px;
+    text-align: left;
+}
+.features ul, .about-system ul {
+    padding-left: 20px;
+    margin: 8px 0 0 0;
+}
+.features h3, .about-system h3, .contact-info h3 {
+    color: #4f8cff;
+    margin-bottom: 8px;
+    font-size: 1.15em;
+}
+.about-system p {
+    color: #2d3a4a;
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+.contact-info p {
+    color: #6a7b8c;
+    font-size: 0.98em;
+}
+.navigation p {
+    margin: 6px 0;
+}
+footer {
+    background: none;
+    color: #6a7b8c;
+    font-size: 0.95em;
+    padding: 16px 0 0 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+@media (max-width: 600px) {
+    .home-container, .login-container, .register-container, .patient-container, .doctor-container, .admin-container {
+        padding: 16px 8px;
+        max-width: 98vw;
+    }
+    .features, .about-system, .contact-info, .navigation {
+        margin-top: 16px;
+    }
+}
+
+p {
+    color: #6a7b8c;
+    font-size: 0.95em;
+    margin-top: 12px;
+}
+
+a {
+    color: #4f8cff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #2d3a4a;
+}

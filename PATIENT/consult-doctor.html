@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consult Doctor - E-CARE</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <div class="patient-container">
+        <h2>Consult a Doctor</h2>
+        <p>Send messages or questions to your doctor and receive medical advice.</p>
+        <div class="theme-toggle">
+            <button id="lightThemeBtn">Light Theme</button>
+            <button id="darkThemeBtn">Dark Theme</button>
+        </div>
+        <section class="consult-section">
+            <form id="consultForm">
+                <label for="doctor">Select Doctor:</label>
+                <select id="doctor" name="doctor" required>
+                    <option value="">Choose...</option>
+                    <option value="jane">Dr. Jane Doe</option>
+                    <option value="john">Dr. John Smith</option>
+                </select>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        <section class="messages-list">
+            <h3>Previous Consultations</h3>
+            <ul id="consultHistory">
+                <li>09 Feb 2026 - Dr. Jane Doe: "Continue your medication and monitor blood sugar daily."</li>
+                <li>05 Feb 2026 - Dr. John Smith: "Schedule a follow-up appointment next week."</li>
+            </ul>
+        </section>
+        <section class="tips">
+            <h3>Consultation Tips</h3>
+            <ul>
+                <li>Be clear and concise in your questions.</li>
+                <li>Share relevant health updates with your doctor.</li>
+                <li>Keep a record of your consultations for future reference.</li>
+            </ul>
+        </section>
+        <nav class="navigation" style="margin-top:32px;">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="records.html">Medical Records</a></li>
+                <li><a href="medication.html">Medication</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="../FRONTEND/index.html">Home</a></li>
+                <li><a href="../FRONTEND/login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer style="margin-top:40px; text-align:center; color:#6a7b8c;">
+        <p>&copy; 2026 E-CARE / My Healthcare Companion. All rights reserved.</p>
+    </footer>
+    <script src="../JS/patient.js"></script>
+    <script>
+    document.getElementById('consultForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Message sent! (Demo only)');
+    });
+    // Theme toggle
+    document.getElementById('lightThemeBtn').addEventListener('click', function() {
+        document.body.classList.remove('dark');
+    });
+    document.getElementById('darkThemeBtn').addEventListener('click', function() {
+        document.body.classList.add('dark');
+    });
+    </script>
+</body>
+</html>

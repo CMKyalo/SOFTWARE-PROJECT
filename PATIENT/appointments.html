@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Appointments - E-CARE</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <div class="patient-container">
+        <h2>My Appointments</h2>
+        <p>View, book, and manage your appointments with doctors.</p>
+        <div class="theme-toggle">
+            <button id="lightThemeBtn">Light Theme</button>
+            <button id="darkThemeBtn">Dark Theme</button>
+        </div>
+        <section class="appointments-list">
+            <h3>Upcoming Appointments</h3>
+            <ul id="upcomingAppointments">
+                <li>10 Feb 2026, 10:00 AM - Dr. Jane Doe (Diabetes Specialist)</li>
+                <li>15 Feb 2026, 2:00 PM - Dr. John Smith (Hypertension Specialist)</li>
+            </ul>
+        </section>
+        <section class="book-appointment">
+            <h3>Book a New Appointment</h3>
+            <form id="bookAppointmentForm">
+                <label for="doctor">Select Doctor:</label>
+                <select id="doctor" name="doctor" required>
+                    <option value="">Choose...</option>
+                    <option value="jane">Dr. Jane Doe</option>
+                    <option value="john">Dr. John Smith</option>
+                </select>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+                <button type="submit">Book Appointment</button>
+            </form>
+        </section>
+        <section class="history">
+            <h3>Appointment History</h3>
+            <ul id="appointmentHistory">
+                <li>01 Feb 2026, 9:00 AM - Dr. Jane Doe (Completed)</li>
+                <li>25 Jan 2026, 11:00 AM - Dr. John Smith (Cancelled)</li>
+            </ul>
+        </section>
+        <section class="tips">
+            <h3>Appointment Tips</h3>
+            <ul>
+                <li>Arrive on time for your appointments.</li>
+                <li>Prepare your questions and health updates for your doctor.</li>
+                <li>Keep track of your appointment history for future reference.</li>
+            </ul>
+        </section>
+        <nav class="navigation" style="margin-top:32px;">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="records.html">Medical Records</a></li>
+                <li><a href="consult-doctor.html">Consult Doctor</a></li>
+                <li><a href="medication.html">Medication</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="../FRONTEND/index.html">Home</a></li>
+                <li><a href="../FRONTEND/login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer style="margin-top:40px; text-align:center; color:#6a7b8c;">
+        <p>&copy; 2026 E-CARE / My Healthcare Companion. All rights reserved.</p>
+    </footer>
+    <script src="../JS/patient.js"></script>
+    <script>
+    document.getElementById('bookAppointmentForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Appointment booked! (Demo only)');
+    });
+    // Theme toggle
+    document.getElementById('lightThemeBtn').addEventListener('click', function() {
+        document.body.classList.remove('dark');
+    });
+    document.getElementById('darkThemeBtn').addEventListener('click', function() {
+        document.body.classList.add('dark');
+    });
+    </script>
+</body>
+</html>

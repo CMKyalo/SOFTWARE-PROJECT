@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - E-CARE</title>
+    <link rel="stylesheet" href="../CSS/patient.css">
+</head>
+<body>
+    <div class="patient-container">
+        <h2>Notifications</h2>
+        <p>Stay updated with appointment, medication, and follow-up reminders.</p>
+        <div class="theme-toggle">
+            <button id="lightThemeBtn">Light Theme</button>
+            <button id="darkThemeBtn">Dark Theme</button>
+        </div>
+        <section class="notifications-list">
+            <h3>Recent Notifications</h3>
+            <ul id="recentNotifications">
+                <li>Appointment Reminder: 10 Feb 2026, 10:00 AM with Dr. Jane Doe</li>
+                <li>Medication Reminder: Metformin - Next dose at 8:00 PM</li>
+                <li>Follow-up Consultation: 15 Feb 2026, 2:00 PM with Dr. John Smith</li>
+                <li>New Message from Dr. Jane Doe</li>
+            </ul>
+        </section>
+        <section class="settings">
+            <h3>Notification Settings</h3>
+            <form id="notificationSettingsForm">
+                <label>
+                    <input type="checkbox" name="appointment" checked>
+                    Appointment Reminders
+                </label>
+                <label>
+                    <input type="checkbox" name="medication" checked>
+                    Medication Reminders
+                </label>
+                <label>
+                    <input type="checkbox" name="followup" checked>
+                    Follow-up Reminders
+                </label>
+                <label>
+                    <input type="checkbox" name="messages" checked>
+                    Doctor Messages
+                </label>
+                <button type="submit">Save Settings</button>
+            </form>
+        </section>
+        <section class="tips">
+            <h3>Notification Tips</h3>
+            <ul>
+                <li>Enable important notifications to stay informed.</li>
+                <li>Check your notifications regularly for updates.</li>
+                <li>Customize your settings for a better experience.</li>
+            </ul>
+        </section>
+        <nav class="navigation" style="margin-top:32px;">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="consult-doctor.html">Consult Doctor</a></li>
+                <li><a href="health-records.html">Health Records</a></li>
+                <li><a href="medication.html">Medication</a></li>
+                <li><a href="../FRONTEND/index.html">Home</a></li>
+                <li><a href="../FRONTEND/login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer style="margin-top:40px; text-align:center; color:#6a7b8c;">
+        <p>&copy; 2026 E-CARE / My Healthcare Companion. All rights reserved.</p>
+    </footer>
+    <script src="../JS/patient.js"></script>
+    <script>
+    document.getElementById('notificationSettingsForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Settings saved! (Demo only)');
+    });
+    // Theme toggle
+    document.getElementById('lightThemeBtn').addEventListener('click', function() {
+        document.body.classList.remove('dark');
+    });
+    document.getElementById('darkThemeBtn').addEventListener('click', function() {
+        document.body.classList.add('dark');
+    });
+    </script>
+</body>
+</html>

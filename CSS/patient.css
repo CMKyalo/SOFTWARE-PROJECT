@@ -1,0 +1,145 @@
+/* patient.css for E-CARE / My Healthcare Companion */
+
+:root {
+    --primary-bg: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    --container-bg: #fff;
+    --primary-color: #2d3a4a;
+    --accent-color: #4f8cff;
+    --secondary-color: #6a7b8c;
+    --button-bg: linear-gradient(90deg, #4f8cff 0%, #6ed6ff 100%);
+    --button-hover-bg: linear-gradient(90deg, #2d3a4a 0%, #4f8cff 100%);
+}
+
+body {
+    background: var(--primary-bg);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.patient-container {
+    background: var(--container-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    padding: 32px 40px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    margin: 24px auto;
+    transition: background 0.3s;
+}
+
+h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 24px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 12px;
+}
+
+nav ul li a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+label {
+    text-align: left;
+    color: var(--primary-color);
+    font-size: 1em;
+    margin-bottom: 4px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], select, textarea, input[type="date"], input[type="time"], input[type="file"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #b6c6e2;
+    font-size: 1em;
+    background: #f7fafd;
+    margin-bottom: 8px;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus, select:focus, textarea:focus, input[type="date"]:focus, input[type="time"]:focus, input[type="file"]:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+button {
+    background: var(--button-bg);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: var(--button-hover-bg);
+}
+
+footer {
+    background: none;
+    color: var(--secondary-color);
+    font-size: 0.95em;
+    padding: 16px 0 0 0;
+}
+
+.theme-toggle {
+    margin: 24px 0 0 0;
+    text-align: center;
+}
+.theme-toggle button {
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 0 8px;
+    transition: background 0.2s;
+}
+.theme-toggle button:hover {
+    background: var(--primary-color);
+}
+
+/* Dark Theme */
+body.dark {
+    --primary-bg: linear-gradient(135deg, #232526 0%, #414345 100%);
+    --container-bg: #2d3a4a;
+    --primary-color: #e0eafc;
+    --accent-color: #6ed6ff;
+    --secondary-color: #b6c6e2;
+    --button-bg: linear-gradient(90deg, #6ed6ff 0%, #4f8cff 100%);
+    --button-hover-bg: linear-gradient(90deg, #e0eafc 0%, #6ed6ff 100%);
+}

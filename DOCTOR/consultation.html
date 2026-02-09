@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Consultation - E-CARE</title>
+    <link rel="stylesheet" href="../CSS/patient.css">
+</head>
+<body>
+    <div class="doctor-container">
+        <h2>Consultation Dashboard</h2>
+        <p>View and respond to patient messages, manage consultations, and update notes.</p>
+        <div class="theme-toggle">
+            <button id="lightThemeBtn">Light Theme</button>
+            <button id="darkThemeBtn">Dark Theme</button>
+        </div>
+        <section class="consult-list">
+            <h3>Patient Messages</h3>
+            <table style="width:100%;border-collapse:collapse;">
+                <thead>
+                    <tr style="background:#f7fafd;">
+                        <th>Patient</th>
+                        <th>Message</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>I have been feeling dizzy lately. What should I do?</td>
+                        <td><button class="replyBtn">Reply</button></td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>Can I change my medication dosage?</td>
+                        <td><button class="replyBtn">Reply</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="reply-section" style="display:none;" id="replySection">
+            <h3>Reply to Patient</h3>
+            <form id="replyForm">
+                <label for="replyMessage">Your Reply:</label>
+                <textarea id="replyMessage" name="replyMessage" rows="4" required></textarea>
+                <button type="submit">Send Reply</button>
+            </form>
+        </section>
+        <section class="consult-history">
+            <h3>Consultation History</h3>
+            <ul>
+                <li>09 Feb 2026 - John Doe: "Continue medication and monitor symptoms."</li>
+                <li>05 Feb 2026 - Jane Smith: "Schedule a follow-up appointment."</li>
+            </ul>
+        </section>
+        <section class="tips">
+            <h3>Consultation Tips</h3>
+            <ul>
+                <li>Review patient history before responding.</li>
+                <li>Provide clear and actionable advice.</li>
+                <li>Document all consultations for future reference.</li>
+            </ul>
+        </section>
+        <nav class="navigation" style="margin-top:32px;">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="patients.html">Patients</a></li>
+                <li><a href="records.html">Medical Records</a></li>
+                <li><a href="prescriptions.html">Prescriptions</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="doctor-profile.html">Profile</a></li>
+                <li><a href="../FRONTEND/index.html">Home</a></li>
+                <li><a href="../FRONTEND/login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer style="margin-top:40px; text-align:center; color:#6a7b8c;">
+        <p>&copy; 2026 E-CARE / My Healthcare Companion. All rights reserved.</p>
+    </footer>
+    <script src="../JS/doctor.js"></script>
+    <script>
+    // Theme toggle
+    document.getElementById('lightThemeBtn').addEventListener('click', function() {
+        document.body.classList.remove('dark');
+    });
+    document.getElementById('darkThemeBtn').addEventListener('click', function() {
+        document.body.classList.add('dark');
+    });
+    // Reply logic (demo only)
+    const replyBtns = document.querySelectorAll('.replyBtn');
+    const replySection = document.getElementById('replySection');
+    replyBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            replySection.style.display = 'block';
+        });
+    });
+    document.getElementById('replyForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Reply sent! (Demo only)');
+        replySection.style.display = 'none';
+    });
+    </script>
+</body>
+</html>

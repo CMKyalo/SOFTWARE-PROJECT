@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient List - E-CARE</title>
+    <link rel="stylesheet" href="../CSS/patient.css">
+</head>
+<body>
+    <div class="doctor-container">
+        <h2>Patient List</h2>
+        <p>View and manage your patients, access their records, and schedule consultations.</p>
+        <div class="theme-toggle">
+            <button id="lightThemeBtn">Light Theme</button>
+            <button id="darkThemeBtn">Dark Theme</button>
+        </div>
+        <section class="patient-list">
+            <h3>My Patients</h3>
+            <table style="width:100%;border-collapse:collapse;">
+                <thead>
+                    <tr style="background:#f7fafd;">
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Chronic Illness</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>john.doe@email.com</td>
+                        <td>Diabetes</td>
+                        <td>
+                            <button class="viewBtn">View</button>
+                            <button class="consultBtn">Consult</button>
+                            <button class="recordsBtn">Records</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>jane.smith@email.com</td>
+                        <td>Hypertension</td>
+                        <td>
+                            <button class="viewBtn">View</button>
+                            <button class="consultBtn">Consult</button>
+                            <button class="recordsBtn">Records</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="tips">
+            <h3>Patient Management Tips</h3>
+            <ul>
+                <li>Review patient records before consultations.</li>
+                <li>Keep patient information up-to-date.</li>
+                <li>Use the records button to quickly access medical history.</li>
+            </ul>
+        </section>
+        <nav class="navigation" style="margin-top:32px;">
+            <ul>
+                <li><a href="doctor-dashboard.html">Dashboard</a></li>
+                <li><a href="consultation.html">Consultations</a></li>
+                <li><a href="records.html">Medical Records</a></li>
+                <li><a href="prescriptions.html">Prescriptions</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="doctor-profile.html">Profile</a></li>
+                <li><a href="../FRONTEND/index.html">Home</a></li>
+                <li><a href="../FRONTEND/login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer style="margin-top:40px; text-align:center; color:#6a7b8c;">
+        <p>&copy; 2026 E-CARE / My Healthcare Companion. All rights reserved.</p>
+    </footer>
+    <script src="../JS/doctor.js"></script>
+    <script>
+    // Theme toggle
+    document.getElementById('lightThemeBtn').addEventListener('click', function() {
+        document.body.classList.remove('dark');
+    });
+    document.getElementById('darkThemeBtn').addEventListener('click', function() {
+        document.body.classList.add('dark');
+    });
+    // Demo actions
+    const viewBtns = document.querySelectorAll('.viewBtn');
+    viewBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            alert('Viewing patient details (Demo only)');
+        });
+    });
+    const consultBtns = document.querySelectorAll('.consultBtn');
+    consultBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            alert('Consulting patient (Demo only)');
+        });
+    });
+    const recordsBtns = document.querySelectorAll('.recordsBtn');
+    recordsBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            alert('Accessing patient records (Demo only)');
+        });
+    });
+    </script>
+</body>
+</html>

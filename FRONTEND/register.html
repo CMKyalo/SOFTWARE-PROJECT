@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="register-container">
+        <h2>Register for E-CARE</h2>
+        <p>Create your account to access My Healthcare Companion and manage your health information securely.</p>
+        <form id="registerForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="role">Register as:</label>
+            <select id="role" name="role" required>
+                <option value="">Select Role</option>
+                <option value="patient">Patient</option>
+                <option value="doctor">Doctor</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <label for="chronic">Chronic Illness (optional):</label>
+            <select id="chronic" name="chronic">
+                <option value="">Select</option>
+                <option value="cancer">Cancer</option>
+                <option value="diabetes">Diabetes</option>
+                <option value="hypertension">Hypertension</option>
+                <option value="hepatitis">Hepatitis</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="agree">
+                <input type="checkbox" id="agree" name="agree" required>
+                I agree to the <a href="#" style="color:#4f8cff;">terms and privacy policy</a>
+            </label>
+
+            <button type="submit">Register</button>
+        </form>
+        <div class="features">
+            <h3>Benefits of Registering</h3>
+            <ul>
+                <li>Access secure online consultations</li>
+                <li>Book appointments with qualified doctors</li>
+                <li>Manage your health records digitally</li>
+                <li>Receive reminders for medication and appointments</li>
+                <li>Communicate easily with healthcare professionals</li>
+            </ul>
+        </div>
+        <div class="about-system">
+            <h3>About E-CARE</h3>
+            <p>E-CARE is a digital healthcare platform for patients with chronic illnesses. Register to connect with verified doctors, manage appointments, and access your medical records securely.</p>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: sngethe@strathmore.edu</p>
+        </div>
+        <div class="navigation">
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+            <p><a href="index.html">Back to Home</a></p>
+        </div>
+    </div>
+    <footer style="margin-top:40px; text-align:center; color:#6a7b8c;">
+        <p>&copy; 2026 E-CARE / My Healthcare Companion. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+<script>
+// Redirect based on role after registration (demo only)
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const role = document.getElementById('role').value;
+    if (role === 'patient') {
+        window.location.href = 'patient.html'; // Replace with actual patient dashboard
+    } else if (role === 'doctor') {
+        window.location.href = 'doctor.html'; // Replace with actual doctor dashboard
+    } else if (role === 'admin') {
+        window.location.href = 'admin.html'; // Replace with actual admin dashboard
+    } else {
+        alert('Please select a role.');
+    }
+});
+</script>
+</body>
+</html>
